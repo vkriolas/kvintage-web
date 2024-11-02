@@ -16,12 +16,16 @@ export const retrieveOrder = cache(async function (id: string) {
     .catch((err) => medusaError(err))
 })
 
-export const listOrders = cache(async function (
-  limit: number = 10,
-  offset: number = 0
-) {
-  return sdk.store.order
-    .list({ limit, offset }, { next: { tags: ["order"] }, ...getAuthHeaders() })
+export const listOrders = cache(async function () {
+  const orders = sdk.store.order
+    .list({}, { next: { tags: ["order"] }, ...getAuthHeaders() })
     .then(({ orders }) => orders)
     .catch((err) => medusaError(err))
+
+  console.log("orders", orders)
+  console.log("getAuthHeaders", getAuthHeaders())
+  sdk.store.order.list({}, { next: { tags: ["order"] }, ...getAuthHeaders() }).then(({ orders }) => console.log("order", orders))
+  console.log("getAuthHeaders", await orders)
+
+  return orders
 })
