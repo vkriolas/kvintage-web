@@ -13,34 +13,49 @@ export default async function Footer() {
     <footer className="border-t border-ui-border-base w-full">
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
-          <div>
+          <div className="flex flex-col gap-y-4">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase font-bold tracking-wider"
             >
               Kriolas Vintage
             </LocalizedClientLink>
-            <Text className="flex gap-x-2 txt-compact-small-plus items-center">
-              Visit us at
-              <a href="https://maps.app.goo.gl/SHQjmp8YzuEXyure6" target="_blank" rel="noreferrer">
-                <MapPin fill="#9ca3af" className="fill-[#9ca3af] me-1" />
-                Helsingevej 44, 3230 Græsted, Denmark
-              </a>
-            </Text>
-            <Text className="flex gap-x-2 txt-compact-small-plus items-center">
-              Check our social media
-              <a href="mailto:contact@kvintage.dk" target="_blank" rel="noreferrer">
-                <Mail fill="#9ca3af" className="fill-[#9ca3af]" />
-              </a>
-              &
-              <a href="https://www.instagram.com/kriolasvintage" target="_blank" rel="noreferrer">
-                <Instagram fill="#9ca3af" className="fill-[#9ca3af]" />
-              </a>
-              {/* &
-              <a href="https://facebook.com/" target="_blank" rel="noreferrer">
-                <Facebook fill="#9ca3af" />
-              </a> */}
-            </Text>
+            
+            <div className="flex flex-col gap-y-3">
+              <Text className="flex items-center text-ui-fg-subtle hover:text-ui-fg-base transition-colors">
+                <MapPin className="w-5 h-5 mr-2" />
+                <a 
+                  href="https://maps.app.goo.gl/SHQjmp8YzuEXyure6" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="hover:underline"
+                >
+                  Helsingevej 44, 3230 Græsted, Denmark
+                </a>
+              </Text>
+
+              <div className="flex items-center gap-x-4">
+                <Text className="text-ui-fg-subtle">Connect with us:</Text>
+                <div className="flex gap-x-3">
+                  <a 
+                    href="mailto:contact@kvintage.dk" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="text-ui-fg-subtle hover:text-ui-fg-base transition-colors"
+                  >
+                    <Mail className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/kriolasvintage" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="text-ui-fg-subtle hover:text-ui-fg-base transition-colors"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {product_categories && product_categories?.length > 0 && (
