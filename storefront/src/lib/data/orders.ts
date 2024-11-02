@@ -17,15 +17,8 @@ export const retrieveOrder = cache(async function (id: string) {
 })
 
 export const listOrders = cache(async function () {
-  const orders = sdk.store.order
+  return sdk.store.order
     .list({}, { next: { tags: ["order"] }, ...getAuthHeaders() })
     .then(({ orders }) => orders)
     .catch((err) => medusaError(err))
-
-  console.log("orders", orders)
-  console.log("getAuthHeaders", getAuthHeaders())
-  sdk.store.order.list({}, { next: { tags: ["order"] }, ...getAuthHeaders() }).then(({ orders }) => console.log("order", orders))
-  console.log("getAuthHeaders", await orders)
-
-  return orders
 })

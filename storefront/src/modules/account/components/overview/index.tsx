@@ -65,7 +65,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-y-4">
+            {/* <div className="flex flex-col gap-y-4">
               <div className="flex items-center gap-x-2">
                 <h3 className="text-large-semi">Recent orders</h3>
               </div>
@@ -127,7 +127,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                   <span data-testid="no-orders-message">No recent orders</span>
                 )}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
