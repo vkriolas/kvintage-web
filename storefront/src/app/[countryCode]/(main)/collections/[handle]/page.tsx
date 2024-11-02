@@ -52,7 +52,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const collection = await getCollectionByHandle(params.handle)
+  const collection = await getCollectionByHandle(decodeURIComponent(params.handle))
 
   if (!collection) {
     notFound()
@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CollectionPage({ params, searchParams }: Props) {
   const { sortBy, page } = searchParams
 
-  const collection = await getCollectionByHandle(params.handle).then(
+  const collection = await getCollectionByHandle(decodeURIComponent(params.handle)).then(
     (collection: StoreCollection) => collection
   )
 

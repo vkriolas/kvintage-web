@@ -141,7 +141,7 @@ const AccountNav = ({
                   Addresses
                 </AccountNavLink>
               </li>
-              <li>
+              {/* <li>
                 <AccountNavLink
                   href="/account/orders"
                   route={route!}
@@ -149,7 +149,7 @@ const AccountNav = ({
                 >
                   Orders
                 </AccountNavLink>
-              </li>
+              </li> */}
               <li className="text-grey-700">
                 <button
                   type="button"
