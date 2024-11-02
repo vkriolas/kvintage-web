@@ -1,4 +1,5 @@
 import { Suspense } from "react"
+import Image from "next/image"  // Add this import at the top
 
 import { listRegions } from "@lib/data/regions"
 import { StoreRegion } from "@medusajs/types"
@@ -19,12 +20,13 @@ export default async function Nav() {
             </div>
           </div>
 
-          <div className="flex items-center h-full">
+          <div className="flex items-center h-full gap-2">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className="flex items-center gap-2 txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
+              <Image src="/icon.png" alt="Kriolas Vintage Logo" width={32} height={32} />
               Kriolas Vintage
             </LocalizedClientLink>
           </div>

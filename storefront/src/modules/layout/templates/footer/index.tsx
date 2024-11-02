@@ -2,6 +2,7 @@ import { getCategoriesList } from "@lib/data/categories"
 import { getCollectionsList } from "@lib/data/collections"
 import { Text, clx } from "@medusajs/ui"
 
+import { Instagram, Mail, MapPin } from "lucide-react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 export default async function Footer() {
@@ -19,6 +20,27 @@ export default async function Footer() {
             >
               Kriolas Vintage
             </LocalizedClientLink>
+            <Text className="flex gap-x-2 txt-compact-small-plus items-center">
+              Visit us at
+              <a href="https://maps.app.goo.gl/SHQjmp8YzuEXyure6" target="_blank" rel="noreferrer">
+                <MapPin fill="#9ca3af" className="fill-[#9ca3af] me-1" />
+                Helsingevej 44, 3230 Græsted, Denmark
+              </a>
+            </Text>
+            <Text className="flex gap-x-2 txt-compact-small-plus items-center">
+              Check our social media
+              <a href="mailto:contact@kvintage.dk" target="_blank" rel="noreferrer">
+                <Mail fill="#9ca3af" className="fill-[#9ca3af]" />
+              </a>
+              &
+              <a href="https://www.instagram.com/kriolasvintage" target="_blank" rel="noreferrer">
+                <Instagram fill="#9ca3af" className="fill-[#9ca3af]" />
+              </a>
+              {/* &
+              <a href="https://facebook.com/" target="_blank" rel="noreferrer">
+                <Facebook fill="#9ca3af" />
+              </a> */}
+            </Text>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {product_categories && product_categories?.length > 0 && (

@@ -154,15 +154,7 @@ const getProfileCompletion = (customer: HttpTypes.StoreCustomer | null) => {
     count++
   }
 
-  const billingAddress = customer.addresses?.find(
-    (addr) => addr.is_default_billing
-  )
-
-  if (billingAddress) {
-    count++
-  }
-
-  return (count / 4) * 100
+  return (count / 3) * 100
 }
 
 export default Overview
