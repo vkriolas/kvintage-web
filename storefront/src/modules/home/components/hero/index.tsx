@@ -15,7 +15,7 @@ const Hero = () => {
         <span>
           <Heading
             level="h1"
-            className="text-3xl leading-10 text-white font-extrabold"
+            className="text-4xl leading-10 text-white font-extrabold"
           >
             Revive the Style, Rewrite Fashion
           </Heading>
